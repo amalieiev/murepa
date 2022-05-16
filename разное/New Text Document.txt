@@ -1,0 +1,25 @@
+https://www.jscamp.app/ru/docs/reactnative14/
+https://www.youtube.com/watch?v=yyruDE2e6D8&t=1s
+
+
+npx react-native run-android
+
+
+
+
+
+как собрать aab
+
+https://reactnative.dev/docs/signed-apk-android#generating-the-release-aab
+https://www.youtube.com/watch?v=Wvy8ACbP38I
+
+
+в андроид студии на устройстве wipe data
+cd android
+.\gradlew clean
+cd ..
+npm cache clean --force
+
+
+запустить дебагер в консоль андроида
+adb shell input keyevent 82

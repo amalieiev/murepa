@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MainStack from '../../navigate';
 import LanguagesSelect from '../menu/languagesSelect'
@@ -8,28 +8,27 @@ import LanguagesSelect from '../menu/languagesSelect'
 
 export default function AsyncStorageGetItem({ gamer }) {
 
-  let storage
 
-  const getDataName = async () => {
+  const [ storage , setStorage ] = useState (gamer);
+
+
+  useEffect( async () => {
+    debugger
     try {
       const jsonValue = await AsyncStorage.getItem('objGameStore')
-      storage = jsonValue != null ? JSON.parse(jsonValue) : null;
+      const value = jsonValue  ? JSON.parse(jsonValue) : null;
+      debugger
+      setStorage (value)
 
-
-      if (storage) {
-        gamer = storage
-        return <LanguagesSelect gamer={gamer} />
-
-      } else {
-        return <MainStack gamer={gamer} />
-      }
+      debugger
     } catch (e) {
       // error reading value
     }
+  }, []);
 
-  }
+  debugger
 
-  getDataName()
+ return storage ? <LanguagesSelect gamer={storage.leng} /> : <MainStack gamer={storage.leng} />;
 
 
 }

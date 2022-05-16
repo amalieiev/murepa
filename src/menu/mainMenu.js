@@ -8,7 +8,7 @@ import { lenguages } from '../lenguages/languagesMenu';
 
 export default function MainMenu({ navigation, route }) {
 
-
+debugger
   return (
 
     

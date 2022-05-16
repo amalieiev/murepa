@@ -38,7 +38,7 @@ const gamerOb = {
 
 const App: () => Node = () => {
 
-  debugger
+  
   return (
     
     <AsyncStorageGetItem gamer={gamerOb} />

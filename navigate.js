@@ -19,7 +19,7 @@ const Stack = createNativeStackNavigator();
 
 
 
-export default function Navigate(gamer) {
+export default function Navigate({gamer}) {
 
   debugger
     return <NavigationContainer>
