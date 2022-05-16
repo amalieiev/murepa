@@ -28,7 +28,7 @@ export default function AsyncStorageGetItem({ gamer }) {
 
   debugger
 
- return storage.leng ? <MainStack gamer={storage} /> : <LanguagesSelect gamer={storage} /> ;
+ return storage ? <LanguagesSelect gamer={storage} /> : <MainStack gamer={storage} />;
 
 
 }
